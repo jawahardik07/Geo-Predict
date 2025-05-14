@@ -1,0 +1,45 @@
+2025-05-12 20:34:00,085 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-12 20:34:00,086 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-12 20:34:00,092 - INFO -  * Restarting with stat
+2025-05-12 20:40:16,439 - WARNING -  * Debugger is active!
+2025-05-12 20:40:16,447 - INFO -  * Debugger PIN: 775-334-924
+2025-05-12 20:44:26,761 - INFO -  * Detected change in 'C:\\Hj major project\\train_model.py', reloading
+2025-05-12 20:44:27,391 - INFO -  * Restarting with stat
+2025-05-12 23:40:13,894 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-12 23:40:13,895 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-12 23:40:13,898 - INFO -  * Restarting with stat
+2025-05-12 23:40:16,665 - WARNING -  * Debugger is active!
+2025-05-12 23:40:16,671 - INFO -  * Debugger PIN: 287-132-603
+2025-05-12 23:41:24,934 - INFO - 127.0.0.1 - - [12/May/2025 23:41:24] "GET / HTTP/1.1" 200 -
+2025-05-12 23:41:25,057 - INFO - 127.0.0.1 - - [12/May/2025 23:41:25] "GET /static/styles.css HTTP/1.1" 200 -
+2025-05-12 23:41:25,141 - INFO - 127.0.0.1 - - [12/May/2025 23:41:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-12 23:45:55,269 - INFO - 127.0.0.1 - - [12/May/2025 23:45:55] "GET / HTTP/1.1" 200 -
+2025-05-12 23:45:55,298 - INFO - 127.0.0.1 - - [12/May/2025 23:45:55] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-05-12 23:45:55,319 - INFO - 127.0.0.1 - - [12/May/2025 23:45:55] "[33mGET /static/geology-background.jpg HTTP/1.1[0m" 404 -
+2025-05-12 23:45:56,710 - INFO - 127.0.0.1 - - [12/May/2025 23:45:56] "GET / HTTP/1.1" 200 -
+2025-05-12 23:45:56,740 - INFO - 127.0.0.1 - - [12/May/2025 23:45:56] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-05-12 23:45:56,753 - INFO - 127.0.0.1 - - [12/May/2025 23:45:56] "[33mGET /static/geology-background.jpg HTTP/1.1[0m" 404 -
+2025-05-13 00:04:52,288 - INFO - 127.0.0.1 - - [13/May/2025 00:04:52] "GET / HTTP/1.1" 200 -
+2025-05-13 00:04:52,361 - INFO - 127.0.0.1 - - [13/May/2025 00:04:52] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-05-13 00:04:52,489 - INFO - 127.0.0.1 - - [13/May/2025 00:04:52] "[33mGET /static/geology-background.jpg HTTP/1.1[0m" 404 -
+2025-05-13 00:06:29,583 - INFO - 127.0.0.1 - - [13/May/2025 00:06:29] "GET / HTTP/1.1" 200 -
+2025-05-13 00:06:30,266 - INFO - 127.0.0.1 - - [13/May/2025 00:06:30] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-05-13 00:06:50,121 - INFO - 127.0.0.1 - - [13/May/2025 00:06:50] "[33mGET /static/geology-background.jpg HTTP/1.1[0m" 404 -
+2025-05-13 00:07:40,805 - INFO - 127.0.0.1 - - [13/May/2025 00:07:40] "GET / HTTP/1.1" 200 -
+2025-05-13 00:07:40,936 - INFO - 127.0.0.1 - - [13/May/2025 00:07:40] "GET /static/styles.css HTTP/1.1" 200 -
+2025-05-13 00:11:41,821 - INFO - 127.0.0.1 - - [13/May/2025 00:11:41] "GET / HTTP/1.1" 200 -
+2025-05-13 00:11:41,923 - INFO - 127.0.0.1 - - [13/May/2025 00:11:41] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-05-13 00:17:27,141 - INFO - 127.0.0.1 - - [13/May/2025 00:17:27] "GET / HTTP/1.1" 200 -
+2025-05-13 00:17:27,288 - INFO - 127.0.0.1 - - [13/May/2025 00:17:27] "GET /static/styles.css HTTP/1.1" 200 -
+2025-05-13 00:19:07,551 - INFO - 127.0.0.1 - - [13/May/2025 00:19:07] "GET / HTTP/1.1" 200 -
+2025-05-13 00:19:07,686 - INFO - 127.0.0.1 - - [13/May/2025 00:19:07] "GET /static/styles.css HTTP/1.1" 200 -
+2025-05-13 00:24:15,650 - INFO - 127.0.0.1 - - [13/May/2025 00:24:15] "GET / HTTP/1.1" 200 -
+2025-05-13 00:24:15,902 - INFO - 127.0.0.1 - - [13/May/2025 00:24:15] "GET /static/styles.css HTTP/1.1" 200 -
+2025-05-13 00:25:02,623 - INFO - 127.0.0.1 - - [13/May/2025 00:25:02] "GET / HTTP/1.1" 200 -
+2025-05-13 00:25:02,742 - INFO - 127.0.0.1 - - [13/May/2025 00:25:02] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-05-13 00:34:05,719 - INFO - 127.0.0.1 - - [13/May/2025 00:34:05] "GET / HTTP/1.1" 200 -
+2025-05-13 00:34:05,815 - INFO - 127.0.0.1 - - [13/May/2025 00:34:05] "[33mGET /static/team/geologist1.jpg HTTP/1.1[0m" 404 -
+2025-05-13 00:34:05,823 - INFO - 127.0.0.1 - - [13/May/2025 00:34:05] "[33mGET /static/team/datasciencetist1.jpg HTTP/1.1[0m" 404 -
+2025-05-13 00:34:05,843 - INFO - 127.0.0.1 - - [13/May/2025 00:34:05] "GET /static/styles.css HTTP/1.1" 200 -

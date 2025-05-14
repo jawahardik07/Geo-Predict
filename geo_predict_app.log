@@ -1,94 +1,88 @@
-2025-05-13 21:43:54,918 - __main__ - INFO - Model, scaler, and label encoder loaded successfully.
-2025-05-13 21:44:03,859 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:44:03] "GET /?sio2=71.7&al2o3=2.2&feo=7.1&mgo=6.5&cao=4.4&na2o=6.5&k2o=7.9&tio2=5.7 HTTP/1.1" 200 -
-2025-05-13 21:44:04,060 - __main__ - WARNING - 404 error: Page not found at http://127.0.0.1:5000/static/team/geologist1.jpg - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
-2025-05-13 21:44:04,061 - __main__ - WARNING - 404 error: Page not found at http://127.0.0.1:5000/static/team/datasciencetist1.jpg - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
-2025-05-13 21:44:04,070 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:44:04] "[33mGET /static/team/geologist1.jpg HTTP/1.1[0m" 404 -
-2025-05-13 21:44:04,073 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:44:04] "[33mGET /static/team/datasciencetist1.jpg HTTP/1.1[0m" 404 -
-2025-05-13 21:44:04,163 - __main__ - WARNING - 404 error: Page not found at http://127.0.0.1:5000/.well-known/appspecific/com.chrome.devtools.json - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
-2025-05-13 21:44:04,168 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:44:04] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
-2025-05-13 21:44:04,188 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:44:04] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
-2025-05-13 21:44:56,832 - flask_wtf.csrf - INFO - The CSRF token is missing.
-2025-05-13 21:44:56,834 - __main__ - ERROR - API validation failed: {'sio2': ['This field is required.'], 'al2o3': ['This field is required.'], 'feo': ['This field is required.'], 'mgo': ['This field is required.'], 'cao': ['This field is required.'], 'na2o': ['This field is required.'], 'k2o': ['This field is required.'], 'tio2': ['This field is required.'], 'csrf_token': ['The CSRF token is missing.']}
-2025-05-13 21:44:56,836 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:44:56] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
-2025-05-13 21:44:58,865 - flask_wtf.csrf - INFO - The CSRF token is missing.
-2025-05-13 21:44:58,866 - __main__ - ERROR - API validation failed: {'sio2': ['This field is required.'], 'al2o3': ['This field is required.'], 'feo': ['This field is required.'], 'mgo': ['This field is required.'], 'cao': ['This field is required.'], 'na2o': ['This field is required.'], 'k2o': ['This field is required.'], 'tio2': ['This field is required.'], 'csrf_token': ['The CSRF token is missing.']}
-2025-05-13 21:44:58,868 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:44:58] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
-2025-05-13 21:51:15,818 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:51:15] "GET /?sio2=71.7&al2o3=2.2&feo=7.1&mgo=6.5&cao=4.4&na2o=6.5&k2o=7.9&tio2=5.7 HTTP/1.1" 200 -
-2025-05-13 21:51:15,902 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:51:15] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
-2025-05-13 21:51:15,909 - __main__ - WARNING - 404 error: Page not found at http://127.0.0.1:5000/static/team/geologist1.jpg - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
-2025-05-13 21:51:15,923 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:51:15] "[33mGET /static/team/geologist1.jpg HTTP/1.1[0m" 404 -
-2025-05-13 21:51:15,926 - __main__ - WARNING - 404 error: Page not found at http://127.0.0.1:5000/static/team/datasciencetist1.jpg - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
-2025-05-13 21:51:15,929 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:51:15] "[33mGET /static/team/datasciencetist1.jpg HTTP/1.1[0m" 404 -
-2025-05-13 21:55:37,011 - __main__ - INFO - Model, scaler, and label encoder loaded successfully.
-2025-05-13 21:55:37,056 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
+2025-05-13 20:26:01,986 - INFO - Model files loaded successfully.
+2025-05-13 20:26:02,057 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
- * Running on http://192.168.29.67:5000
-2025-05-13 21:55:37,057 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
-2025-05-13 21:55:58,363 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:55:58] "GET / HTTP/1.1" 200 -
-2025-05-13 21:56:44,258 - __main__ - INFO - Prediction: Chlorite for input: {'sio2': '60.5', 'al2o3': '15.3', 'feo': '5.2', 'mgo': '3.8', 'cao': '7.1', 'na2o': '3.5', 'k2o': '2.9', 'tio2': '1.1'}
-2025-05-13 21:56:44,260 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:56:44] "POST / HTTP/1.1" 200 -
-2025-05-13 21:57:28,301 - __main__ - WARNING - 404 error: Page not found at http://127.0.0.1:5000/.well-known/appspecific/com.chrome.devtools.json - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
-2025-05-13 21:57:28,304 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:57:28] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
-2025-05-13 22:02:21,713 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:02:21] "GET /?sio2=71.7&al2o3=2.2&feo=7.1&mgo=6.5&cao=4.4&na2o=6.5&k2o=7.9&tio2=5.7 HTTP/1.1" 200 -
-2025-05-13 22:02:35,340 - __main__ - INFO - Prediction: Chlorite for input: {'sio2': '60.5', 'al2o3': '15.3', 'feo': '5.2', 'mgo': '3.8', 'cao': '7.1', 'na2o': '3.5', 'k2o': '2.9', 'tio2': '1.1'}
-2025-05-13 22:02:35,341 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:02:35] "POST / HTTP/1.1" 200 -
-2025-05-13 22:02:38,325 - __main__ - INFO - Prediction: Chlorite for input: {'sio2': '60.5', 'al2o3': '15.3', 'feo': '5.2', 'mgo': '3.8', 'cao': '7.1', 'na2o': '3.5', 'k2o': '2.9', 'tio2': '1.1'}
-2025-05-13 22:02:38,326 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:02:38] "POST / HTTP/1.1" 200 -
-2025-05-13 22:02:42,203 - __main__ - INFO - Prediction: Chlorite for input: {'sio2': '60.5', 'al2o3': '15.3', 'feo': '5.2', 'mgo': '3.8', 'cao': '7.1', 'na2o': '3.5', 'k2o': '2.9', 'tio2': '1.1'}
-2025-05-13 22:02:42,204 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:02:42] "POST / HTTP/1.1" 200 -
-2025-05-13 22:02:49,953 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:02:49] "GET / HTTP/1.1" 200 -
-2025-05-13 22:36:49,480 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:36:49] "GET / HTTP/1.1" 200 -
-2025-05-13 22:41:38,959 - __main__ - INFO - Model, scaler, and label encoder loaded successfully.
-2025-05-13 22:41:39,023 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
+2025-05-13 20:26:02,058 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-13 20:26:02,061 - INFO -  * Restarting with stat
+2025-05-13 20:26:06,847 - INFO - Model files loaded successfully.
+2025-05-13 20:26:06,867 - WARNING -  * Debugger is active!
+2025-05-13 20:26:06,874 - INFO -  * Debugger PIN: 368-213-942
+2025-05-13 20:26:26,971 - INFO - 127.0.0.1 - - [13/May/2025 20:26:26] "GET /?sio2=71.7&al2o3=2.2&feo=7.1&mgo=6.5&cao=4.4&na2o=6.5&k2o=7.9&tio2=5.7 HTTP/1.1" 200 -
+2025-05-13 20:26:27,757 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-13 20:26:27,784 - INFO - 127.0.0.1 - - [13/May/2025 20:26:27] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-13 20:29:16,231 - INFO - The CSRF token is missing.
+2025-05-13 20:29:16,231 - WARNING - Form validation errors: {'csrf_token': ['The CSRF token is missing.']}
+2025-05-13 20:29:16,232 - INFO - 127.0.0.1 - - [13/May/2025 20:29:16] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-05-13 20:37:55,860 - INFO - 127.0.0.1 - - [13/May/2025 20:37:55] "GET /?sio2=71.7&al2o3=2.2&feo=7.1&mgo=6.5&cao=4.4&na2o=6.5&k2o=7.9&tio2=5.7 HTTP/1.1" 200 -
+2025-05-13 20:37:56,035 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-13 20:37:56,037 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-13 20:37:56,044 - INFO - 127.0.0.1 - - [13/May/2025 20:37:56] "[33mGET /static/team/geologist1.jpg HTTP/1.1[0m" 404 -
+2025-05-13 20:37:56,049 - INFO - 127.0.0.1 - - [13/May/2025 20:37:56] "[33mGET /static/team/datasciencetist1.jpg HTTP/1.1[0m" 404 -
+2025-05-13 20:37:56,119 - INFO - 127.0.0.1 - - [13/May/2025 20:37:56] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-05-13 20:37:57,202 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-13 20:37:57,203 - INFO - 127.0.0.1 - - [13/May/2025 20:37:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-13 20:38:54,942 - INFO - The CSRF token is missing.
+2025-05-13 20:38:54,943 - WARNING - Form validation errors: {'csrf_token': ['The CSRF token is missing.']}
+2025-05-13 20:38:54,944 - INFO - 127.0.0.1 - - [13/May/2025 20:38:54] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-05-13 20:39:58,667 - INFO - 127.0.0.1 - - [13/May/2025 20:39:58] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-05-13 20:39:58,688 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-13 20:39:58,689 - INFO - 127.0.0.1 - - [13/May/2025 20:39:58] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-13 20:43:10,090 - INFO - 127.0.0.1 - - [13/May/2025 20:43:10] "GET /?sio2=71.7&al2o3=2.2&feo=7.1&mgo=6.5&cao=4.4&na2o=6.5&k2o=7.9&tio2=5.7 HTTP/1.1" 200 -
+2025-05-13 20:43:10,251 - INFO - 127.0.0.1 - - [13/May/2025 20:43:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-05-13 20:43:10,288 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-13 20:43:10,291 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-13 20:43:10,294 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-13 20:43:10,295 - INFO - 127.0.0.1 - - [13/May/2025 20:43:10] "[33mGET /static/team/geologist1.jpg HTTP/1.1[0m" 404 -
+2025-05-13 20:43:10,296 - INFO - 127.0.0.1 - - [13/May/2025 20:43:10] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-13 20:43:10,298 - INFO - 127.0.0.1 - - [13/May/2025 20:43:10] "[33mGET /static/team/datasciencetist1.jpg HTTP/1.1[0m" 404 -
+2025-05-13 20:43:34,243 - INFO - 127.0.0.1 - - [13/May/2025 20:43:34] "GET /?sio2=71.7&al2o3=2.2&feo=7.1&mgo=6.5&cao=4.4&na2o=6.5&k2o=7.9&tio2=5.7 HTTP/1.1" 200 -
+2025-05-13 20:43:34,299 - INFO - 127.0.0.1 - - [13/May/2025 20:43:34] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-05-13 20:43:34,301 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-13 20:43:34,302 - INFO - 127.0.0.1 - - [13/May/2025 20:43:34] "[33mGET /static/team/geologist1.jpg HTTP/1.1[0m" 404 -
+2025-05-13 20:43:34,305 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-13 20:43:34,306 - INFO - 127.0.0.1 - - [13/May/2025 20:43:34] "[33mGET /static/team/datasciencetist1.jpg HTTP/1.1[0m" 404 -
+2025-05-13 20:43:37,747 - INFO - 127.0.0.1 - - [13/May/2025 20:43:37] "GET /?sio2=71.7&al2o3=2.2&feo=7.1&mgo=6.5&cao=4.4&na2o=6.5&k2o=7.9&tio2=5.7 HTTP/1.1" 200 -
+2025-05-13 20:43:37,808 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-13 20:43:37,810 - INFO - 127.0.0.1 - - [13/May/2025 20:43:37] "[33mGET /static/team/geologist1.jpg HTTP/1.1[0m" 404 -
+2025-05-13 20:43:37,810 - INFO - 127.0.0.1 - - [13/May/2025 20:43:37] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-05-13 20:43:37,812 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-13 20:43:37,814 - INFO - 127.0.0.1 - - [13/May/2025 20:43:37] "[33mGET /static/team/datasciencetist1.jpg HTTP/1.1[0m" 404 -
+2025-05-13 20:43:38,199 - INFO - 127.0.0.1 - - [13/May/2025 20:43:38] "GET /?sio2=71.7&al2o3=2.2&feo=7.1&mgo=6.5&cao=4.4&na2o=6.5&k2o=7.9&tio2=5.7 HTTP/1.1" 200 -
+2025-05-13 20:43:38,279 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-13 20:43:38,281 - INFO - 127.0.0.1 - - [13/May/2025 20:43:38] "[33mGET /static/team/geologist1.jpg HTTP/1.1[0m" 404 -
+2025-05-13 20:43:38,282 - INFO - 127.0.0.1 - - [13/May/2025 20:43:38] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-05-13 20:43:38,283 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-13 20:43:38,285 - INFO - 127.0.0.1 - - [13/May/2025 20:43:38] "[33mGET /static/team/datasciencetist1.jpg HTTP/1.1[0m" 404 -
+2025-05-13 20:44:38,144 - INFO - The CSRF token is missing.
+2025-05-13 20:44:38,144 - WARNING - Form validation errors: {'csrf_token': ['The CSRF token is missing.']}
+2025-05-13 20:44:38,145 - INFO - 127.0.0.1 - - [13/May/2025 20:44:38] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-05-13 20:45:23,313 - INFO - 127.0.0.1 - - [13/May/2025 20:45:23] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-05-13 20:45:23,475 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-13 20:45:23,476 - INFO - 127.0.0.1 - - [13/May/2025 20:45:23] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-13 21:01:15,619 - INFO - Model files loaded successfully.
+2025-05-13 21:27:18,248 - INFO - The CSRF token is missing.
+2025-05-13 21:27:18,250 - WARNING - Form validation errors: {'csrf_token': ['The CSRF token is missing.']}
+2025-05-13 21:27:18,254 - INFO - 127.0.0.1 - - [13/May/2025 21:27:18] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-05-13 21:27:19,641 - INFO - The CSRF token is missing.
+2025-05-13 21:27:19,642 - WARNING - Form validation errors: {'csrf_token': ['The CSRF token is missing.']}
+2025-05-13 21:27:19,643 - INFO - 127.0.0.1 - - [13/May/2025 21:27:19] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-05-13 21:34:08,485 - INFO - The CSRF token is missing.
+2025-05-13 21:34:08,486 - WARNING - Form validation errors: {'csrf_token': ['The CSRF token is missing.']}
+2025-05-13 21:34:08,487 - INFO - 127.0.0.1 - - [13/May/2025 21:34:08] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-05-13 21:34:42,374 - INFO - 127.0.0.1 - - [13/May/2025 21:34:42] "GET /?sio2=71.7&al2o3=2.2&feo=7.1&mgo=6.5&cao=4.4&na2o=6.5&k2o=7.9&tio2=5.7 HTTP/1.1" 200 -
+2025-05-13 21:34:42,562 - INFO - 127.0.0.1 - - [13/May/2025 21:34:42] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-05-13 21:34:42,564 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-13 21:34:42,568 - INFO - 127.0.0.1 - - [13/May/2025 21:34:42] "[33mGET /static/team/geologist1.jpg HTTP/1.1[0m" 404 -
+2025-05-13 21:34:42,578 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-13 21:34:42,582 - INFO - 127.0.0.1 - - [13/May/2025 21:34:42] "[33mGET /static/team/datasciencetist1.jpg HTTP/1.1[0m" 404 -
+2025-05-13 21:34:42,603 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-13 21:34:42,608 - INFO - 127.0.0.1 - - [13/May/2025 21:34:42] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-13 21:38:18,110 - INFO - Model files loaded successfully.
+2025-05-13 21:38:18,171 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
- * Running on http://192.168.29.67:5000
-2025-05-13 22:41:39,024 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
-2025-05-13 22:42:09,900 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:42:09] "GET / HTTP/1.1" 200 -
-2025-05-13 22:42:10,055 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:42:10] "GET /static/styles.css HTTP/1.1" 200 -
-2025-05-13 22:50:49,675 - __main__ - INFO - Prediction: Olivine for input: {'sio2': '65', 'al2o3': '16', 'feo': '3.0', 'mgo': '2.0', 'cao': '4.0', 'na2o': '3.0', 'k2o': '3.5', 'tio2': '0.6'}
-2025-05-13 22:50:49,685 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:50:49] "POST / HTTP/1.1" 200 -
-2025-05-13 22:50:49,767 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:50:49] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
-2025-05-13 22:59:45,638 - __main__ - INFO - Prediction: Olivine for input: {'sio2': '65', 'al2o3': '16', 'feo': '3.0', 'mgo': '2.0', 'cao': '4.0', 'na2o': '3.0', 'k2o': '3.5', 'tio2': '0.6'}
-2025-05-13 22:59:45,643 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:59:45] "POST / HTTP/1.1" 200 -
-2025-05-13 22:59:45,770 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:59:45] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
-2025-05-13 22:59:57,135 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:59:57] "GET / HTTP/1.1" 200 -
-2025-05-13 22:59:57,299 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 22:59:57] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
-2025-05-13 23:00:40,203 - __main__ - INFO - Model, scaler, and label encoder loaded successfully.
-2025-05-13 23:00:40,331 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://192.168.29.67:5000
-2025-05-13 23:00:40,333 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
-2025-05-13 23:00:47,237 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:00:47] "GET / HTTP/1.1" 200 -
-2025-05-13 23:00:47,386 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:00:47] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
-2025-05-14 02:39:03,537 - __main__ - INFO - Prediction: Olivine for input: {'sio2': '65', 'al2o3': '16', 'feo': '3', 'mgo': '2', 'cao': '4', 'na2o': '3', 'k2o': '3.5', 'tio2': '0.6'}
-2025-05-14 02:39:03,560 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:39:03] "POST / HTTP/1.1" 200 -
-2025-05-14 02:39:03,777 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:39:03] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
-2025-05-14 02:39:45,496 - __main__ - INFO - Prediction: Olivine for input: {'sio2': '45', 'al2o3': '16', 'feo': '3', 'mgo': '2', 'cao': '4', 'na2o': '3', 'k2o': '3.5', 'tio2': '0.6'}
-2025-05-14 02:39:45,499 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:39:45] "POST / HTTP/1.1" 200 -
-2025-05-14 02:39:45,722 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:39:45] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
-2025-05-14 02:40:11,682 - __main__ - INFO - Prediction: Olivine for input: {'sio2': '45', 'al2o3': '16', 'feo': '3', 'mgo': '2', 'cao': '4', 'na2o': '3', 'k2o': '3.5', 'tio2': '0.6'}
-2025-05-14 02:40:11,683 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:40:11] "POST / HTTP/1.1" 200 -
-2025-05-14 02:40:11,797 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:40:11] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
-2025-05-14 02:40:27,412 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:40:27] "GET / HTTP/1.1" 200 -
-2025-05-14 02:40:27,492 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:40:27] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
-2025-05-14 02:41:03,349 - __main__ - INFO - Prediction: Dolomite for input: {'sio2': '50', 'al2o3': '5', 'feo': '15', 'mgo': '20', 'cao': '5', 'na2o': '1', 'k2o': '0.5', 'tio2': '1'}
-2025-05-14 02:41:03,352 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:41:03] "POST / HTTP/1.1" 200 -
-2025-05-14 02:41:03,581 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:41:03] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
-2025-05-14 02:41:22,466 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:41:22] "GET / HTTP/1.1" 200 -
-2025-05-14 02:41:22,540 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:41:22] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
-2025-05-14 02:41:53,011 - __main__ - INFO - Prediction: Pyroxene for input: {'sio2': '45', 'al2o3': '35', 'feo': '2', 'mgo': '1', 'cao': '0.5', 'na2o': '4.0', 'k2o': '5.0', 'tio2': '0.5'}
-2025-05-14 02:41:53,013 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:41:53] "POST / HTTP/1.1" 200 -
-2025-05-14 02:41:53,248 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:41:53] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
-2025-05-14 02:48:44,648 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:48:44] "GET / HTTP/1.1" 200 -
-2025-05-14 02:48:44,765 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:48:44] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
-2025-05-14 02:49:09,954 - __main__ - INFO - Prediction: Mica for input: {'sio2': '95', 'al2o3': '1.5', 'feo': '0.5', 'mgo': '0.2', 'cao': '0.3', 'na2o': '0.5', 'k2o': '1.0', 'tio2': '0.1'}
-2025-05-14 02:49:09,956 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:49:09] "POST / HTTP/1.1" 200 -
-2025-05-14 02:49:10,072 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:49:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
-2025-05-14 02:49:40,508 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:49:40] "GET / HTTP/1.1" 200 -
-2025-05-14 02:49:40,653 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:49:40] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
-2025-05-14 02:50:00,210 - __main__ - INFO - Prediction: Feldspar for input: {'sio2': '18', 'al2o3': '29', 'feo': '0.3', 'mgo': '3.5', 'cao': '2', 'na2o': '1.5', 'k2o': '1', 'tio2': '2'}
-2025-05-14 02:50:00,211 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:50:00] "POST / HTTP/1.1" 200 -
-2025-05-14 02:50:00,429 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:50:00] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-05-13 21:38:18,171 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-13 21:38:18,176 - INFO -  * Restarting with stat
+2025-05-13 21:38:23,526 - INFO - Model files loaded successfully.
+2025-05-13 21:38:23,547 - WARNING -  * Debugger is active!
+2025-05-13 21:38:23,568 - INFO -  * Debugger PIN: 368-213-942
+2025-05-13 21:43:49,190 - INFO -  * Detected change in 'C:\\Hj major project\\app.py', reloading
+2025-05-13 21:43:50,185 - INFO -  * Restarting with stat
