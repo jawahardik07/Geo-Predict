@@ -1,0 +1,443 @@
+/* static/styles.css */
+/* Designed to work with the HTML structure you provided */
+
+/* --- Global Resets & Body --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font stack */
+    background-color: #111; /* Dark background from your HTML */
+    color: #ccc; /* Light gray text for readability on dark background */
+    line-height: 1.7;
+    overflow-x: hidden; /* Prevent horizontal scrollbars */
+    /* Allow vertical scrolling for content */
+}
+
+/* Canvas for background animation */
+#bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keep it behind all content */
+}
+
+/* Main content wrapper to sit above the canvas */
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding-top: 20px; /* Space from top */
+    padding-bottom: 20px; /* Space at bottom */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px; /* A bit wider for a richer layout */
+    margin: 30px auto; /* Centered with some top/bottom margin */
+    background-color: rgba(25, 25, 30, 0.85); /* Dark, slightly transparent container */
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* More pronounced shadow for dark theme */
+}
+
+/* --- Header --- */
+.header {
+    text-align: center;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #444; /* Darker border */
+}
+
+.header-icon .fas { /* Assuming Font Awesome is used */
+    font-size: 3em;
+    color: #00aaff; /* A bright accent color */
+    margin-bottom: 15px;
+}
+
+.header-title {
+    font-size: 2.8em;
+    color: #fff; /* White or very light title */
+    margin-bottom: 10px;
+    font-weight: 300; /* Lighter font weight for modern feel */
+}
+
+.header-description {
+    font-size: 1.2em;
+    color: #bbb; /* Lighter gray for description */
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- Navigation --- */
+.navigation {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.2); /* Slight background for nav */
+    border-radius: 6px;
+}
+
+.navigation ul {
+    list-style: none;
+}
+
+.navigation ul li {
+    display: inline-block;
+    margin: 0 12px;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: #00aaff; /* Accent color for links */
+    font-size: 1.1em;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navigation ul li a:hover,
+.navigation ul li a.active { /* Assuming an 'active' class for current section */
+    color: #fff;
+    background-color: #00aaff;
+}
+
+.navigation ul li a .fas {
+    margin-right: 6px;
+}
+
+/* --- Section Styling --- */
+section {
+    padding: 40px 0;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2em;
+    color: #00aaff; /* Accent color for titles */
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+    font-weight: 400;
+}
+
+.section-title::after { /* Underline effect for section titles */
+    content: '';
+    display: block;
+    width: 70px;
+    height: 3px;
+    background-color: #00aaff;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- Forms (Analysis & Contact) --- */
+.analysis-form, .contact-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 25px; /* Increased gap */
+    margin-bottom: 25px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: 10px; /* Increased space */
+    font-weight: 500; /* Slightly less bold */
+    color: #ddd; /* Lighter label color */
+    font-size: 0.95em;
+}
+
+.input-group label .fas {
+    margin-right: 8px;
+    color: #00aaff; /* Icon color */
+}
+
+.input-group input[type="number"],
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group textarea {
+    padding: 15px; /* More padding */
+    border: 1px solid #555;
+    background-color: #222; /* Darker input background */
+    color: #fff;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #777;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #00aaff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 170, 255, 0.25);
+}
+
+.input-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.analyze-button, .contact-button {
+    grid-column: 1 / -1; /* Button spans full width in the grid */
+    padding: 15px 25px;
+    background: linear-gradient(45deg, #00aaff, #0077cc); /* Gradient button */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.15em;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 170, 255, 0.2);
+}
+
+.analyze-button:hover, .contact-button:hover {
+    background: linear-gradient(45deg, #0077cc, #0055aa);
+}
+.analyze-button:active, .contact-button:active {
+    transform: translateY(1px);
+}
+
+.analyze-button i, .contact-button i {
+    margin-right: 10px;
+}
+
+/* --- Result Display --- */
+.result-display {
+    text-align: center;
+    padding: 25px;
+    border-radius: 6px;
+    margin-top: 25px;
+    font-size: 1.1em;
+}
+
+.result-display p { /* Default message */
+    color: #aaa;
+}
+
+.error-message { /* From your HTML, used by AJAX (or Flask if not AJAX) */
+    background-color: rgba(114, 28, 36, 0.8); /* Darker red */
+    color: #f8d7da;
+    padding: 15px;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.error-message .fas { margin-right: 10px; }
+
+.success-message { /* From your HTML, used by AJAX (or Flask if not AJAX) */
+    background-color: rgba(21, 87, 36, 0.8); /* Darker green */
+    color: #d4edda;
+    padding: 15px;
+    border: 1px solid #c3e6cb;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.success-message .fas { margin-right: 10px; }
+
+
+/* --- Data Insights & Chart --- */
+.data-insights p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #bbb;
+}
+.chart-container {
+    width: 100%;
+    max-width: 750px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(34, 34, 40, 0.9); /* Slightly different dark for chart area */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+/* Chart.js will draw on the canvas, styling for ticks/labels is in JS options */
+
+/* --- Methodology --- */
+.methodology p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    color: #bbb;
+}
+.methodology-steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px;
+    text-align: center;
+}
+.methodology-step {
+    flex-basis: 200px; /* Adjust for number of items */
+    padding: 20px;
+    background-color: rgba(40, 40, 45, 0.8);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.methodology-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 170, 255, 0.2);
+}
+.methodology-step i.fas {
+    font-size: 2.8em; /* Larger icons */
+    color: #00aaff;
+    margin-bottom: 15px;
+    display: block; /* Center icon */
+}
+.methodology-step h3 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+.methodology-step p {
+    font-size: 0.9em;
+    color: #aaa;
+    text-align: center; /* Ensure paragraph text is centered */
+    margin-bottom: 0; /* Reset margin for p inside step */
+}
+
+
+/* --- Team Section --- */
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px; /* Increased gap */
+}
+.team-member {
+    text-align: center;
+    flex-basis: calc(50% - 40px); /* Two members per row, accounting for gap */
+    max-width: 300px; /* Max width for a team member card */
+    padding: 25px;
+    background-color: rgba(40, 40, 45, 0.8);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 170, 255, 0.2);
+}
+.team-member-image {
+    width: 130px; /* Slightly smaller */
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #00aaff; /* Accent border */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.team-member h3 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 1.4em;
+}
+.team-member-title {
+    color: #00aaff; /* Accent for title */
+    font-style: italic;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+.team-member-bio {
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+
+/* --- Contact Section --- */
+.contact p {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: #bbb;
+}
+
+/* --- Footer --- */
+.footer {
+    text-align: center;
+    padding: 30px 20px; /* More padding */
+    border-top: 1px solid #444;
+    margin-top: 40px;
+    font-size: 0.95em;
+    color: #888; /* Lighter footer text */
+}
+.footer-content {
+    max-width: 1100px;
+    margin: auto;
+}
+.social-icons {
+    margin-top: 15px;
+}
+.social-icons a {
+    margin: 0 12px;
+    color: #00aaff; /* Accent color */
+    font-size: 1.6em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.social-icons a:hover {
+    color: #fff; /* Brighter on hover */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 2.2em;
+    }
+    .header-description {
+        font-size: 1em;
+    }
+    .navigation ul li {
+        display: block; /* Stack nav links on smaller screens */
+        margin: 10px 0;
+    }
+    .analysis-form, .contact-form {
+        grid-template-columns: 1fr; /* Single column for forms */
+    }
+    .methodology-step, .team-member {
+        flex-basis: 100%; /* Full width for these items */
+        max-width: none;
+    }
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-title {
+        font-size: 1.8em;
+    }
+    .section-title {
+        font-size: 1.8em;
+    }
+    .input-group input[type="number"],
+    .input-group input[type="text"],
+    .input-group input[type="email"],
+    .input-group textarea,
+    .analyze-button, .contact-button {
+        font-size: 0.95em;
+        padding: 12px;
+    }
+}

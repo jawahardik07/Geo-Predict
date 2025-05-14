@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced Mineral Analysis Platform powered by AI">
+    <meta name="keywords" content="mineral analysis, geology, AI, prediction, GeoPredict">
+    <meta name="author" content="Your Name"> <title>GeoPredict - The Ultimate Mineral Analysis Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Embedded styles for background animation from your HTML */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Allow vertical scroll, hide horizontal */
+            background: #111;
+            /* Ensure content is scrollable if it exceeds viewport height */
+            overflow-y: auto; 
+        }
+
+        #bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Behind all other content */
+        }
+        .content-wrapper { 
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="bg-animation"></canvas>
+
+    <div class="content-wrapper"> 
+        <div class="container">
+            <header class="header">
+                <div class="header-icon">
+                    <i class="fas fa-atom"></i>
+                </div>
+                <h1 class="header-title">Geo Predict🌍🪨</h1>
+                <p class="header-description">A new platform for detailed mineral composition analysis, aiming for precise results.</p>
+            </header>
+
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#analysis-section"><i class="fas fa-flask"></i> Composition Input</a></li>
+                    <li><a href="#result-section"><i class="fas fa-chart-bar"></i> Analysis Outcome</a></li>
+                    <li><a href="#data-insights"><i class="fas fa-lightbulb"></i> Data Insights</a></li>
+                    <li><a href="#methodology"><i class="fas fa-microscope"></i> Methodology</a></li>
+                    <li><a href="#team"><i class="fas fa-users"></i> Our Team</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <section id="analysis-section" class="analysis-section">
+                <h2 class="section-title">Sample Composition Input</h2>
+                <form method="POST" action="/" class="analysis-form"> <div class="input-group">
+                        <label for="sio2"><i class="fas fa-cube"></i> SiO<sub>2</sub> (Silicon Dioxide)</label>
+                        <input type="number" id="sio2" name="sio2" step="any" required placeholder="Enter SiO2 percentage" value="{{ input_values.sio2 if input_values.sio2 is not none else '' }}">
+                    </div>
+                    <div class="input-group">
+                        <label for="al2o3"><i class="fas fa-cube"></i> Al<sub>2</sub>O<sub>3</sub> (Aluminum Oxide)</label>
+                        <input type="number" id="al2o3" name="al2o3" step="any" required placeholder="Enter Al2O3 percentage" value="{{ input_values.al2o3 if input_values.al2o3 is not none else '' }}">
+                    </div>
+                    <div class="input-group">
+                        <label for="feo"><i class="fas fa-cube"></i> FeO (Iron Oxide)</label>
+                        <input type="number" id="feo" name="feo" step="any" required placeholder="Enter FeO percentage" value="{{ input_values.feo if input_values.feo is not none else '' }}">
+                    </div>
+                    <div class="input-group">
+                        <label for="mgo"><i class="fas fa-cube"></i> MgO (Magnesium Oxide)</label>
+                        <input type="number" id="mgo" name="mgo" step="any" required placeholder="Enter MgO percentage" value="{{ input_values.mgo if input_values.mgo is not none else '' }}">
+                    </div>
+                    <div class="input-group">
+                        <label for="cao"><i class="fas fa-cube"></i> CaO (Calcium Oxide)</label>
+                        <input type="number" id="cao" name="cao" step="any" required placeholder="Enter CaO percentage" value="{{ input_values.cao if input_values.cao is not none else '' }}">
+                    </div>
+                    <div class="input-group">
+                        <label for="na2o"><i class="fas fa-cube"></i> Na<sub>2</sub>O (Sodium Oxide)</label>
+                        <input type="number" id="na2o" name="na2o" step="any" required placeholder="Enter Na2O percentage" value="{{ input_values.na2o if input_values.na2o is not none else '' }}">
+                    </div>
+                    <div class="input-group">
+                        <label for="k2o"><i class="fas fa-cube"></i> K<sub>2</sub>O (Potassium Oxide)</label>
+                        <input type="number" id="k2o" name="k2o" step="any" required placeholder="Enter K2O percentage" value="{{ input_values.k2o if input_values.k2o is not none else '' }}">
+                    </div>
+                    <div class="input-group">
+                        <label for="tio2"><i class="fas fa-cube"></i> TiO<sub>2</sub> (Titanium Dioxide)</label>
+                        <input type="number" id="tio2" name="tio2" step="any" required placeholder="Enter TiO2 percentage" value="{{ input_values.tio2 if input_values.tio2 is not none else '' }}">
+                    </div>
+                    <button type="submit" class="analyze-button">
+                        <i class="fas fa-fingerprint"></i> Initiate Analysis
+                    </button>
+                </form>
+            </section>
+
+            <section id="result-section" class="result-section">
+                <h2 class="section-title">Analysis Outcome</h2>
+                <div id="result-display" class="result-display">
+                    {% if error_message %}
+                        <div class="error-message"><i class="fas fa-exclamation-circle"></i> Error: {{ error_message }}</div>
+                    {% elif prediction_result %}
+                        <div class="success-message"><i class="fas fa-check-circle"></i> <b>Predicted Mineral:</b> {{ prediction_result }}</div>
+                    {% else %}
+                        <p>Enter the sample composition above to begin the analysis.</p>
+                    {% endif %}
+                </div>
+            </section>
+
+            <section id="data-insights" class="data-insights">
+                <h2 class="section-title">Data Insights</h2>
+                <p>Explore the relationships between chemical components and mineral types.</p>
+                <div class="chart-container">
+                    <canvas id="composition-chart"></canvas>
+                </div>
+            </section>
+
+            <section id="methodology" class="methodology">
+                <h2 class="section-title">Analysis Methodology</h2>
+                <p>
+                    Our cutting-edge analysis is powered by advanced machine learning algorithms, meticulously trained on a
+                    comprehensive dataset of mineral compositions. We leverage techniques like XGBoost, Random Forest, and
+                    Neural Networks to ensure the highest accuracy.
+                </p>
+                <div class="methodology-steps">
+                    <div class="methodology-step"> <i class="fas fa-database"></i> <h3>Data Acquisition</h3> <p>We source data from reputable geological surveys and research institutions.</p> </div>
+                    <div class="methodology-step"> <i class="fas fa-tools"></i> <h3>Data Preprocessing</h3> <p>The data undergoes rigorous cleaning, normalization, and feature engineering.</p> </div>
+                    <div class="methodology-step"> <i class="fas fa-brain"></i> <h3>Model Training</h3> <p>Our AI models are trained and fine-tuned to achieve optimal predictive performance.</p> </div>
+                    <div class="methodology-step"> <i class="fas fa-search"></i> <h3>Prediction</h3> <p>The trained model predicts the mineral composition based on user input.</p> </div>
+                </div>
+            </section>
+
+            
+
+            <section id="contact" class="contact">
+                <h2 class="section-title">Contact Our Specialists</h2>
+                <p>Have questions or need assistance with your mineral analysis? Reach out to our expert team.</p>
+                <form id="contact-form" class="contact-form"> <div class="input-group"> <label for="name"><i class="fas fa-user"></i> Your Name</label> <input type="text" id="name" name="name" required placeholder="Enter your name"> </div>
+                    <div class="input-group"> <label for="email"><i class="fas fa-envelope"></i> Your Email</label> <input type="email" id="email" name="email" required placeholder="Enter your email"> </div>
+                    <div class="input-group"> <label for="message"><i class="fas fa-comment-dots"></i> Message</label> <textarea id="message" name="message" rows="4" required placeholder="Enter your message"></textarea> </div>
+                    <button type="submit" class="contact-button"> <i class="fas fa-paper-plane"></i> Send Inquiry </button>
+                </form>
+            </section>
+
+            <footer class="footer">
+                <div class="footer-content">
+                    <p>&copy; Made by Hardik Jawa|BCA|MAJOR PROJECT 2025</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </footer>
+        </div> </div> <script>
+        // --- Background Animation (Three.js + Simplex Noise) ---
+        if (typeof THREE !== 'undefined' && typeof SimplexNoise !== 'undefined') {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bg-animation'), alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            const geometry = new THREE.PlaneGeometry(20, 20, 256, 256);
+            const material = new THREE.MeshBasicMaterial({ color: 0x222222, wireframe: true });
+            const plane = new THREE.Mesh(geometry, material);
+            scene.add(plane);
+            camera.position.z = 5;
+            const simplex = new SimplexNoise();
+            let zOffset = 0;
+            let clock = new THREE.Clock();
+            function animate() {
+                requestAnimationFrame(animate);
+                const delta = clock.getDelta();
+                zOffset += delta * 0.5;
+                const position = plane.geometry.attributes.position;
+                for (let i = 0; i < position.count; i++) {
+                    const x = position.getX(i);
+                    const y = position.getY(i);
+                    const noise = simplex.noise3D(x * 0.1, y * 0.1, zOffset) * 0.5;
+                    position.setZ(i, noise);
+                }
+                position.needsUpdate = true;
+                plane.rotation.z += delta * 0.1;
+                renderer.render(scene, camera);
+            }
+            animate();
+            window.addEventListener('resize', () => {
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+            });
+        } else {
+            console.warn("Three.js or SimplexNoise library not loaded. Background animation disabled.");
+        }
+
+        // --- jQuery dependent scripts ---
+        if (typeof $ !== 'undefined') {
+            $(document).ready(function () {
+                // The AJAX submission for #analysis-form has been REMOVED
+                // Form now submits traditionally to the '/' route handled by app.py
+
+                // --- Contact Form Submission (Placeholder) ---
+                $('#contact-form').submit(function (event) {
+                    event.preventDefault();
+                    alert('Contact form submission is for demonstration and not implemented in this example.');
+                });
+
+                // --- Chart Initialization (Example) ---
+                if (typeof Chart !== 'undefined' && document.getElementById('composition-chart')) {
+                    const ctx = document.getElementById('composition-chart').getContext('2d');
+                    const chart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['SiO2', 'Al2O3', 'FeO', 'MgO', 'CaO', 'Na2O', 'K2O', 'TiO2'],
+                            datasets: [{
+                                label: 'Example Average Composition (%)',
+                                data: [55, 15, 8, 7, 6, _4, 3, 2], // Placeholder data
+                                backgroundColor: ['rgba(54, 162, 235, 0.6)', 'rgba(255, 99, 132, 0.6)', 'rgba(75, 192, 192, 0.6)', 'rgba(255, 206, 86, 0.6)', 'rgba(153, 102, 255, 0.6)', 'rgba(255, 159, 64, 0.6)', 'rgba(201, 203, 207, 0.6)', 'rgba(255, 99, 71, 0.6)' ],
+                                borderColor: ['rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)', 'rgba(75, 192, 192, 1)', 'rgba(255, 206, 86, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(201, 203, 207, 1)', 'rgba(255, 99, 71, 1)' ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, suggestedMax: 100, ticks: { color: '#ccc' }, grid: { color: '#555'} }, x: { ticks: { color: '#ccc' }, grid: { color: '#555'} } }, plugins: { legend: { labels: { color: '#ccc' } } } }
+                    });
+                } else {
+                    console.warn("Chart.js or canvas element not found. Chart disabled.");
+                }
+
+                // Smooth scrolling for navigation links
+                $('.navigation a[href^="#"]').on('click', function(event) {
+                    var target = $(this.getAttribute('href'));
+                    if( target.length ) {
+                        event.preventDefault();
+                        $('html, body').stop().animate({
+                            scrollTop: target.offset().top - 50 // Adjust offset if you have a fixed header
+                        }, 1000);
+                    }
+                });
+            });
+        } else {
+            console.warn("jQuery not loaded. Some interactive features might be disabled.");
+        }
+    </script>
+</body>
+</html>vent) {
+                    event.preventDefault();
+                    // Add your contact form submission logic here (e.g., sending an email via backend or third-party service)
+                    alert('Contact form submission is for demonstration and not implemented in this example.');
+                    // Optionally, clear the form or show a success message
+                    // $(this).trigger('reset'); 
+                    // $('#contact-form').after('<p style="color:green;">Your message has been sent (simulated).</p>');
+                });
+
+                // --- Chart Initialization (Example - Replace with your data) ---
+                if (typeof Chart !== 'undefined' && document.getElementById('composition-chart')) {
+                    const ctx = document.getElementById('composition-chart').getContext('2d');
+                    const chart = new Chart(ctx, {
+                        type: 'bar', // or 'pie', 'line', etc.
+                        data: {
+                            labels: ['SiO2', 'Al2O3', 'FeO', 'MgO', 'CaO', 'Na2O', 'K2O', 'TiO2'],
+                            datasets: [{
+                                label: 'Example Average Composition (%)',
+                                data: [55, 15, 8, 7, 6, 4, 3, 2], // Placeholder data
+                                backgroundColor: [ // Example colors, add more if needed
+                                    'rgba(54, 162, 235, 0.6)', 'rgba(255, 99, 132, 0.6)',
+                                    'rgba(75, 192, 192, 0.6)', 'rgba(255, 206, 86, 0.6)',
+                                    'rgba(153, 102, 255, 0.6)', 'rgba(255, 159, 64, 0.6)',
+                                    'rgba(201, 203, 207, 0.6)', 'rgba(255, 99, 71, 0.6)' 
+                                ],
+                                borderColor: [ // Example borders
+                                    'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)',
+                                    'rgba(75, 192, 192, 1)', 'rgba(255, 206, 86, 1)',
+                                    'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)',
+                                    'rgba(201, 203, 207, 1)', 'rgba(255, 99, 71, 1)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false, // Allows chart to fill container better
+                            scales: {
+                                y: { beginAtZero: true, suggestedMax: 100, ticks: { color: '#ccc' }, grid: { color: '#555'} }, // Dark theme ticks
+                                x: { ticks: { color: '#ccc' }, grid: { color: '#555'} } // Dark theme ticks
+                            },
+                            plugins: {
+                                legend: { labels: { color: '#ccc' } } // Dark theme legend
+                            }
+                        }
+                    });
+                } else {
+                    console.warn("Chart.js or canvas element not found. Chart disabled.");
+                }
+
+                // Smooth scrolling for navigation links
+                $('.navigation a[href^="#"]').on('click', function(event) {
+                    var target = $(this.getAttribute('href'));
+                    if( target.length ) {
+                        event.preventDefault();
+                        $('html, body').stop().animate({
+                            scrollTop: target.offset().top - 50 // Adjust offset if you have a fixed header
+                        }, 1000);
+                    }
+                });
+            });
+        } else {
+            console.warn("jQuery not loaded. Some interactive features might be disabled.");
+        }
+    </script>
+    </body>
+</html>

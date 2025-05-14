@@ -1,0 +1,110 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Flask Session folder (if you were using filesystem sessions)
+.webassets-cache
+instance/ 
+# This is often used for instance-specific configurations or SQLite databases not meant for version control.
+# If you created an 'instance' folder for any reason and don't want to track it, add it.
+
+# PyInstaller
+# Usually PyInstaller files are in a spec file like PyInstall.spec in the parent directory
+# which is not included by default.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff (just in case, good general Python practice)
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff
+instance/*
+!instance/.keep
+# if you create an instance folder for config files not to be versioned
+
+# Celery stuff (though you removed it, good for future Python projects)
+celerybeat-schedule.*
+
+# Virtual Environment
+venv/
+.venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / Editor specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Log files and folders
+logs/
+*.log
+# If your geo_predict_app.log is inside a 'logs' folder, 'logs/' will cover it.
+# If it's in the root and you want to ignore it specifically:
+# geo_predict_app.log
+
+# Other
+.env # For environment variables if you use a .env file
+# If your expanded_dataset.csv is very large and you don't want it in Git, add:
+# expanded_dataset.csv
+# But if it's part of your project data to share, keep it out of .gitignore
